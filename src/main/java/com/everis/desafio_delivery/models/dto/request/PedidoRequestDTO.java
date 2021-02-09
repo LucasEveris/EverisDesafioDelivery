@@ -2,6 +2,7 @@ package com.everis.desafio_delivery.models.dto.request;
 
 import java.util.List;
 
+import com.everis.desafio_delivery.enums.FormaDePagamento;
 import com.everis.desafio_delivery.models.Item;
 
 import lombok.AllArgsConstructor;
@@ -17,6 +18,7 @@ public class PedidoRequestDTO {
 
 	private Long pedidoId;
 	private Long clienteId;
+	private FormaDePagamento formaDePagamento;
 	
 	private List<Item> itens; 
 	

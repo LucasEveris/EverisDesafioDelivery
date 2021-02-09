@@ -16,7 +16,7 @@ public class PedidoService {
 	
 	@Autowired
 	private PedidoRepository pedidoRepository;
-
+	
 	public Pedido save(Pedido pedido) {
 		return pedidoRepository.save(pedido);
 	}
@@ -25,7 +25,7 @@ public class PedidoService {
 		return pedidoRepository.findAll();
 	}
 	
-	// dando problema
+	// dando problema(?)
 	public Pedido read(Long id) throws Exception {
 		return pedidoRepository.findById(id).orElseThrow(() -> new Exception("Pedido não encontrado"));
 	}

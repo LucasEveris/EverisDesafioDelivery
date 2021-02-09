@@ -5,7 +5,7 @@ public class TODO {
 	 * TODO:
 	 *  
 	 * 2) Criar os Request e Response DTO
-	 * 3) estoque X
+	 * 3) estoque [sugestão]
 	 * 
 	 * 
 	 * 

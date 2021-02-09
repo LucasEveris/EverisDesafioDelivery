@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.everis.desafio_delivery.enums.FormaDePagamento;
 import com.everis.desafio_delivery.models.Cliente;
 import com.everis.desafio_delivery.models.Item;
 import com.everis.desafio_delivery.models.Pedido;
@@ -39,6 +40,9 @@ public class PedidoController {
 	
 	@Autowired
 	private ProdutoService produtoService;
+	
+//	@Autowired(required = true)
+//	private FormaDePagamento formaDePagamento;
 
 	@GetMapping
 	public List<PedidoResponseDTO> list() {
@@ -76,6 +80,10 @@ public class PedidoController {
 			Cliente cliente = clienteService.read(clienteId);
 			Pedido pedido = new Pedido();
 			pedido.setCliente(cliente); // try catch verificando contato do cliente
+			
+			pedido.setFormaDePagamento(pedidoDto.getFormaDePagamento());
+			
+			
 			try {
 				List<Item> itensDoPedido = pedidoDto.getItens();
 				List<Item> itensComProdutos = new ArrayList<>();
